@@ -45,14 +45,18 @@ function spinReels() {
   const isRigged = Math.random() < 0.5;
   console.log(isRigged ? "Rigged outcome" : "Random outcome");
 
-  // Animate the lever to simulate pulling the slot machine lever.
+  // Animate the lever to simulate pulling the slot machine lever downward
   gsap.to("#lever", {
-    duration: 0.3,
-    rotation: 45,
-    y: 10,
+    duration: 0.4,
+    rotation: 30,
     ease: "power2.in",
     onComplete: () => {
-      gsap.to("#lever", { duration: 0.3, rotation: 0, y: 0, ease: "power2.out" });
+      // After pulling down, animate it springing back up
+      gsap.to("#lever", { 
+        duration: 0.6, 
+        rotation: 0, 
+        ease: "elastic.out(1, 0.3)" 
+      });
     }
   });
 
