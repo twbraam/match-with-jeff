@@ -18,6 +18,24 @@ body {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   margin-bottom: 2rem;
   animation: glow 2s ease-in-out infinite alternate;
+  white-space: nowrap; /* Prevent line breaks */
+  text-align: center;
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+/* Media queries for responsive title on mobile */
+@media (max-width: 768px) {
+  .romantic-title {
+    font-size: 3rem; /* Smaller font on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .romantic-title {
+    font-size: 2.5rem; /* Even smaller font on mobile phones */
+  }
 }
 
 @keyframes glow {
